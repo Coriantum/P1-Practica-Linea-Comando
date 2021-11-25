@@ -100,3 +100,11 @@ rm -rf PRUEBA/dir3/dir31/dir312/???q[^b]
 mv PRUEBA/dir3/dir31/dir312 PRUEBA/dir3
 
 #31
+ln -s PRUEBA/dir1 PRUEBA/dir3/enlacedir1
+
+#32
+cd PRUEBA/dir3
+mkdir enlacedir1/
+
+#33
+cp 
