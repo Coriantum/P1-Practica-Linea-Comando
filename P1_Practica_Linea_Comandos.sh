@@ -54,9 +54,10 @@ mkdir PRUEBA
 mkdir PRUEBA/dir1
 mkdir PRUEBA/dir1/dir11
 mkdir PRUEBA/dir2
-mkdir PRUEBA /dir3
-mkdir PRUEBA /dir3/dir31
-mkdir PRUEBA /dir3/dir31/dir312
+mkdir PRUEBA/dir3
+mkdir PRUEBA/dir3/dir31
+mkdir PRUEBA/dir3/dir31/dir311
+mkdir PRUEBA/dir3/dir31/dir312
 
 #18
 cp etc/motd PRUEBA/mensaje
@@ -104,7 +105,33 @@ ln -s PRUEBA/dir1 PRUEBA/dir3/enlacedir1
 
 #32
 cd PRUEBA/dir3
-mkdir enlacedir1/
+mkdir enlacedir1/nuevo1
 
 #33
-cp 
+cp -v bin/u* enlacedir1/nuevo1
+
+#34
+ln fich1 PRUEBA/dir1/enlace
+ln fich1 PRUEBA/dir2/enlace
+
+#35
+rm -rf fich1
+cp PRUEBA/dir1/enlace PRUEBA/dir3/
+
+#36
+ln -s PRUEBA/dir2/enlace PRUEBA/dir1/enlafich1
+
+#37
+cd dir1
+cp enlafich1 PRUEBA/dir2/dir31/dir311/fich1
+
+#38  ?
+echo enlafich1/fich1
+
+#39
+rm -rf dir2/fich1
+
+#40
+rm -r *
+
+#41
