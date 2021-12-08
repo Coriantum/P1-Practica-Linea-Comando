@@ -5,31 +5,29 @@ ls / bin
 ls /tmp
 
 #3
-ls /etc/t* --reverse
+ls -r /etc/t* 
 
 #4
 ls /dev/tty*?????
 
 #5
-ls /dev/tty*[12345]
+ls /dev/tty*[1234]
 
 #6
-ls /dev/tty*[]
+ls /dev/t*C1
 
 #7
+ls -all/
 
+#8
+ls -d /etc/[^t]*
 
-
-
-
-
-
-
-
-
+#9
+ls -R /usr
 
 #10
 cd /tmp
+mkdir PRUEBA
 
 #11
 pwd
@@ -65,26 +63,25 @@ cp etc/motd PRUEBA/mensaje
 
 #19 → DUDAS
 cd PRUEBA
-cp mensaje dir1
+cp mensaje dir1/mensaje && dir2/mensaje && dir3/mensaje
 
 #20
 ls -R
 
 #21
-cp -v /etc/rc.d dir31
+cp -vr /etc/rc.d dir31
 
 #22
-cp -v /bin/?a?? dir311
-
+cp -vr /bin/?a?? dir311
 
 #23
-cp -v ../otroUsuario PRUEBA/dir1/dir11
+cp -vr ../otroUsuario PRUEBA/dir1/dir11
 
 #24
-mv dir31 PRUEBA/dir2
+mv PRUEBA/dir3/dir31 PRUEBA/dir2
 
 #25
-ls -R
+ls -R $HOME
 
 #26
 
@@ -109,7 +106,7 @@ cd PRUEBA/dir3
 mkdir enlacedir1/nuevo1
 
 #33
-cp -v bin/u* enlacedir1/nuevo1
+cp -vr bin/u* enlacedir1/nuevo1
 
 #34
 ln fich1 PRUEBA/dir1/enlace
@@ -126,14 +123,14 @@ ln -s PRUEBA/dir2/enlace PRUEBA/dir1/enlafich1
 cd dir1
 cp enlafich1 PRUEBA/dir2/dir31/dir311/fich1
 
-#38  ?
-echo enlafich1/fich1
+#38
+cat enlafich1/fich1
 
 #39
 rm -rf dir2/fich1
 
 #40
-rm -r *
+rm -r*
 
 #41
 mkdir PRUEBA/dir1
@@ -177,7 +174,7 @@ mkdir dirc
 mkdir dird
 
 #52
-ls -lectura
+ls -l
 
 #53
 touch uno
@@ -186,7 +183,7 @@ ls -l uno
 rm uno
 
 #54 --> Preguntar
-chmod= dir2 
+chmod = dir2 
 chmod o=rwx dir2
 
 #55 -- Preguntar si esta bien
@@ -228,7 +225,7 @@ mkdir ../correo/menus
 
 #60
 cd /$HOME
-rmdir /*[1]
+rmdir /*[^1]
 
 #61 ?
 find ../dev/tty2
@@ -262,7 +259,7 @@ chmod u=rwx,g= ,o=w uno/uno1
 #71
 
 
-#72 ?
+#72 --> Donde lo redirijo?
 who -H
 cat > Buenos_dias
 cat >> 
@@ -275,15 +272,16 @@ cat /etc/motd
 
 #75
 
-#76 --> No comprendo la funcion find
+#76 
 mkdir carpeta
 chmod ar carpeta
-find 
+find ~ -type d > direc
 
 #77
-find 
+find ~ -type d > malo
 
 #78
+find /etc -type f >> direc
 
 #79
 
@@ -295,6 +293,7 @@ ps -U root -u root u
 
 #82
 
+
 #83 incompleto
 echo "'date+'" >> nuevaTrayectoria
 
@@ -305,7 +304,7 @@ ps aux
 uptime -p
 
 #86
-ps aux
+ps aux o ps -e
 
 #87
 cat /etc/passwd | wc -l
